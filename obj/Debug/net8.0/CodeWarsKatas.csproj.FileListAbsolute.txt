@@ -1,0 +1,15 @@
+/home/thxduck/perso/CodeWarsKatas/bin/Debug/net8.0/CodeWarsKatas
+/home/thxduck/perso/CodeWarsKatas/bin/Debug/net8.0/CodeWarsKatas.deps.json
+/home/thxduck/perso/CodeWarsKatas/bin/Debug/net8.0/CodeWarsKatas.runtimeconfig.json
+/home/thxduck/perso/CodeWarsKatas/bin/Debug/net8.0/CodeWarsKatas.dll
+/home/thxduck/perso/CodeWarsKatas/bin/Debug/net8.0/CodeWarsKatas.pdb
+/home/thxduck/perso/CodeWarsKatas/obj/Debug/net8.0/CodeWarsKatas.GeneratedMSBuildEditorConfig.editorconfig
+/home/thxduck/perso/CodeWarsKatas/obj/Debug/net8.0/CodeWarsKatas.AssemblyInfoInputs.cache
+/home/thxduck/perso/CodeWarsKatas/obj/Debug/net8.0/CodeWarsKatas.AssemblyInfo.cs
+/home/thxduck/perso/CodeWarsKatas/obj/Debug/net8.0/CodeWarsKatas.csproj.CoreCompileInputs.cache
+/home/thxduck/perso/CodeWarsKatas/obj/Debug/net8.0/CodeWarsKatas.sourcelink.json
+/home/thxduck/perso/CodeWarsKatas/obj/Debug/net8.0/CodeWarsKatas.dll
+/home/thxduck/perso/CodeWarsKatas/obj/Debug/net8.0/refint/CodeWarsKatas.dll
+/home/thxduck/perso/CodeWarsKatas/obj/Debug/net8.0/CodeWarsKatas.pdb
+/home/thxduck/perso/CodeWarsKatas/obj/Debug/net8.0/CodeWarsKatas.genruntimeconfig.cache
+/home/thxduck/perso/CodeWarsKatas/obj/Debug/net8.0/ref/CodeWarsKatas.dll
