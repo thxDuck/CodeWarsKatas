@@ -69,7 +69,7 @@ static void SpacesRemover()
 /******************************************************************************/
 
 //Given an array of integers, return a new array with each value doubled. 
-LostWithoutaMap();
+// LostWithoutaMap();
 static void LostWithoutaMap()
 {
     (int[], int[]) test_1 = (new[] { 1, 2, 3 }, new[] { 2, 4, 6 });
@@ -90,5 +90,40 @@ static void LostWithoutaMap()
     {
         for (int i = 0; i < intArray.Length; i++) intArray[i] *= 2;
         return intArray;
+    }
+}
+/******************************************************************************/
+RentalCar();
+static void RentalCar()
+{
+    (int, int) test_1 = (1, 40);
+    (int, int) test_2 = (3, 100);
+    (int, int) test_3 = (7, 230);
+
+    if (RentalCarCost(test_1.Item1).Equals(test_1.Item2)) Console.WriteLine("Success !");
+    else Console.WriteLine($"Fail, result should be {test_1.Item2}");
+
+    if (RentalCarCost(test_2.Item1).Equals(test_2.Item2)) Console.WriteLine("Success !");
+    else Console.WriteLine($"Fail, result should be {test_1.Item2}");
+
+    if (RentalCarCost(test_3.Item1).Equals(test_3.Item2)) Console.WriteLine("Success !");
+    else Console.WriteLine($"Fail, result should be {test_1.Item2}");
+
+    static int RentalCarCost(int days)
+    {
+        const int RENT_DAY_OFFER_LOW = 3;
+        const int RENT_DAY_OFFER_HIGH = 7;
+        
+        const int MIN_OFFER = 20;
+        const int MAX_OFFER = 50;
+
+        const int PRICE_PER_DAY = 40;
+
+        int price = days * PRICE_PER_DAY;
+
+        if (days >= RENT_DAY_OFFER_HIGH) return price -= MAX_OFFER;
+        if (days >= RENT_DAY_OFFER_LOW) return price -= MIN_OFFER;
+
+        return price;
     }
 }
