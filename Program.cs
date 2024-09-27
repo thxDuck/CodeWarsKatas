@@ -28,7 +28,7 @@ static void PaperworkKata()
 
 // Clock shows h hours, m minutes and s seconds after midnight.
 // Your task is to write a function which returns the time since midnight in milliseconds.
-Clock();
+// Clock();
 static void Clock()
 {
     int miliSecondsSinceMidnight = Past(0, 1, 1);
@@ -46,7 +46,7 @@ static void Clock()
 }
 
 /******************************************************************************/
-SpacesRemover();
+// SpacesRemover();
 static void SpacesRemover()
 {
     (string, string) test_1 = ("8 j 8   mBliB8g  imjB8B8  jl  B", "8j8mBliB8gimjB8B8jlB");
@@ -63,4 +63,32 @@ static void SpacesRemover()
     else Console.WriteLine($"Fail, result should be {test_1.Item2}");
 
     static string NoSpace(string input) => input.Replace(" ", "");
+}
+
+
+/******************************************************************************/
+
+//Given an array of integers, return a new array with each value doubled. 
+LostWithoutaMap();
+static void LostWithoutaMap()
+{
+    (int[], int[]) test_1 = (new[] { 1, 2, 3 }, new[] { 2, 4, 6 });
+    (int[], int[]) test_2 = (new[] { 4, 1, 1, 1, 4 }, new[] { 8, 2, 2, 2, 8 });
+    (int[], int[]) test_3 = (new[] { 2, 2, 2, 2, 2, 2 }, new[] { 4, 4, 4, 4, 4, 4 });
+
+    if (Maps(test_1.Item1).SequenceEqual(test_1.Item2)) Console.WriteLine("test_1 success !");
+    else Console.WriteLine("test_1 Fail !");
+
+    if (Maps(test_2.Item1).SequenceEqual(test_2.Item2)) Console.WriteLine("test_2 success !");
+    else Console.WriteLine("test_2 Fail !");
+
+    if (Maps(test_3.Item1).SequenceEqual(test_3.Item2)) Console.WriteLine("test_3 success !");
+    else Console.WriteLine("test_3 Fail !");
+
+
+    static int[] Maps(int[] intArray)
+    {
+        for (int i = 0; i < intArray.Length; i++) intArray[i] *= 2;
+        return intArray;
+    }
 }
