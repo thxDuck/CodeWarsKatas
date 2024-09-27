@@ -93,7 +93,7 @@ static void LostWithoutaMap()
     }
 }
 /******************************************************************************/
-RentalCar();
+// RentalCar();
 static void RentalCar()
 {
     (int, int) test_1 = (1, 40);
@@ -113,7 +113,7 @@ static void RentalCar()
     {
         const int RENT_DAY_OFFER_LOW = 3;
         const int RENT_DAY_OFFER_HIGH = 7;
-        
+
         const int MIN_OFFER = 20;
         const int MAX_OFFER = 50;
 
@@ -127,3 +127,58 @@ static void RentalCar()
         return price;
     }
 }
+
+/**********************************************************************************************/
+// Your task is to make two functions ( max and min, or maximum and minimum, etc., depending on the language )
+// that receive a list of integers as input, and return the largest and lowest number in that list, respectively.
+// MinMax();
+static void MinMax()
+{
+    (int[], int) test_1 = (new[] { -52, 56, 30, 29, -54, 0, -110 }, -110);
+    (int[], int) test_2 = (new[] { 42, 54, 65, 87, 0 }, 0);
+    (int[], int) test_3 = (new[] { 4, 6, 2, 1, 9, 63, -134, 566 }, 566);
+    (int[], int) test_4 = (new[] { 5 }, 5);
+
+    
+    if (Min(test_1.Item1).Equals(test_1.Item2)) Console.WriteLine("test_1 success !");
+    else Console.WriteLine($"Result should be {test_1.Item2}, but you've return {Max(test_1.Item1)}");
+
+    if (Min(test_2.Item1).Equals(test_2.Item2)) Console.WriteLine("test_2 success !");
+    else Console.WriteLine($"Result should be {test_2.Item2}, but you've return {Max(test_2.Item1)}");
+
+    if (Max(test_3.Item1).Equals(test_3.Item2)) Console.WriteLine("test_3 success !");
+    else Console.WriteLine($"Result should be {test_3.Item2}, but you've return {Min(test_3.Item1)}");
+
+    if (Max(test_4.Item1).Equals(test_4.Item2)) Console.WriteLine("test_4 success !");
+    else Console.WriteLine($"Result should be {test_4.Item2}, but you've return {Min(test_4.Item1)}");
+
+
+    int Min(int[] list)
+    {
+        int value = list[0];
+        foreach (int number in list)
+        {
+            if (number < value) value = number;
+        }
+        return value;
+    }
+
+    int Max(int[] list)
+    {
+        int value = list[0];
+        foreach (int number in list)
+        {
+            if (number > value) value = number;
+        }
+        return value;
+    }
+}
+
+
+// Launch Katas : 
+// PaperworkKata();
+// Clock();
+// SpacesRemover();
+// LostWithoutaMap();
+// RentalCar();
+// MinMax();
