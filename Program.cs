@@ -196,24 +196,47 @@ static void ReverseIntArray()
     (int, int[]) test_2 = (1, new[] { 1 });
     (int, int[]) test_3 = (10, new[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 });
 
-    if (ReverseSeq(test_1.Item1).SequenceEqual(test_1.Item2)) Console.WriteLine("test_1 success !");
-    else Console.WriteLine($"Result should be {DisplayIntArray(test_1.Item2)}, but you've return {DisplayIntArray(ReverseSeq(test_1.Item1))}");
+    /* 
+        if (ReverseSeq_First(test_1.Item1).SequenceEqual(test_1.Item2)) Console.WriteLine("test_1 success !");
+        else Console.WriteLine($"Result should be {DisplayIntArray(test_1.Item2)}, but you've return {DisplayIntArray(ReverseSeq_First(test_1.Item1))}");
 
-    if (ReverseSeq(test_2.Item1).SequenceEqual(test_2.Item2)) Console.WriteLine("test_1 success !");
-    else Console.WriteLine($"Result should be {DisplayIntArray(test_2.Item2)}, but you've return {DisplayIntArray(ReverseSeq(test_2.Item1))}");
+        if (ReverseSeq_First(test_2.Item1).SequenceEqual(test_2.Item2)) Console.WriteLine("test_1 success !");
+        else Console.WriteLine($"Result should be {DisplayIntArray(test_2.Item2)}, but you've return {DisplayIntArray(ReverseSeq_First(test_2.Item1))}");
 
-    if (ReverseSeq(test_3.Item1).SequenceEqual(test_3.Item2)) Console.WriteLine("test_1 success !");
-    else Console.WriteLine($"Result should be {DisplayIntArray(test_3.Item2)}, but you've return {DisplayIntArray(ReverseSeq(test_3.Item1))}");
+        if (ReverseSeq_First(test_3.Item1).SequenceEqual(test_3.Item2)) Console.WriteLine("test_1 success !");
+        else Console.WriteLine($"Result should be {DisplayIntArray(test_3.Item2)}, but you've return {DisplayIntArray(ReverseSeq_First(test_3.Item1))}");
+    */
 
+    if (ReverseSeq_Second(test_1.Item1).SequenceEqual(test_1.Item2)) Console.WriteLine("test_1 success !");
+    else Console.WriteLine($"Result should be {DisplayIntArray(test_1.Item2)}, but you've return {DisplayIntArray(ReverseSeq_Second(test_1.Item1))}");
 
-    static int[] ReverseSeq(int n)
+    if (ReverseSeq_Second(test_2.Item1).SequenceEqual(test_2.Item2)) Console.WriteLine("test_1 success !");
+    else Console.WriteLine($"Result should be {DisplayIntArray(test_2.Item2)}, but you've return {DisplayIntArray(ReverseSeq_Second(test_2.Item1))}");
+
+    if (ReverseSeq_Second(test_3.Item1).SequenceEqual(test_3.Item2)) Console.WriteLine("test_1 success !");
+    else Console.WriteLine($"Result should be {DisplayIntArray(test_3.Item2)}, but you've return {DisplayIntArray(ReverseSeq_Second(test_3.Item1))}");
+
+    // Ma solution 
+    static int[] ReverseSeq_First(int n)
     {
         int index = 0;
         int[] intArray = new int[n];
         while (n > 0)
             intArray[index++] = n--;
+
         return intArray;
     }
+
+    // Solution "Best practice" proposé sur CodeWars
+    static int[] ReverseSeq_Second(int n)
+    {
+        // Namespace:System.Linq 
+        // MS Doc : https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.range?view=net-8.0
+        // Enumerable.Range(1, n) => Generates a sequence of integral numbers within a specified range.
+        return Enumerable.Range(1, n).Reverse().ToArray();
+    }
+
+
 }
 
 
