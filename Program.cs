@@ -238,6 +238,37 @@ static void ReverseIntArray()
 
 
 }
+static void SquareSumSequence()
+{
+
+    (int[], int) test_1 = (new[] { 1, 2, 2 }, 9);
+    (int[], int) test_2 = (new[] { 1, 2 }, 5);
+    (int[], int) test_3 = (new[] { 5, 3, 4 }, 50);
+    (int[], int) test_4 = (new int[] { }, 0);
+
+    if (SquareSum(test_1.Item1).Equals(test_1.Item2)) Console.WriteLine("test_1 success !");
+    else Console.WriteLine($"Result should be {test_1.Item2}, but you've return {SquareSum(test_1.Item1)}");
+
+    if (SquareSum(test_2.Item1).Equals(test_2.Item2)) Console.WriteLine("test_2 success !");
+    else Console.WriteLine($"Result should be {test_2.Item2}, but you've return {SquareSum(test_2.Item1)}");
+
+    if (SquareSum(test_3.Item1).Equals(test_3.Item2)) Console.WriteLine("test_3 success !");
+    else Console.WriteLine($"Result should be {test_3.Item2}, but you've return {SquareSum(test_3.Item1)}");
+
+    if (SquareSum(test_4.Item1).Equals(test_4.Item2)) Console.WriteLine("test_4 success !");
+    else Console.WriteLine($"Result should be {test_4.Item2}, but you've return {SquareSum(test_4.Item1)}");
+
+    // Ma solution 
+    static int SquareSum(int[] numbers)
+    {
+        int powValue = 2;
+        int sum = 0;
+        foreach (int value in numbers)
+            sum += (int)Math.Pow(value, powValue);
+
+        return sum;
+    }
+}
 
 
 // Launch Katas : 
@@ -247,4 +278,6 @@ static void ReverseIntArray()
 // LostWithoutaMap();
 // RentalCar();
 // MinMax();
-ReverseIntArray();
+// ReverseIntArray();
+SquareSumSequence();
+
