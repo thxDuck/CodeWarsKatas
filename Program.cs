@@ -259,15 +259,18 @@ static void SquareSumSequence()
     else Console.WriteLine($"Result should be {test_4.Item2}, but you've return {SquareSum(test_4.Item1)}");
 
     // Ma solution 
-    static int SquareSum(int[] numbers)
-    {
-        int powValue = 2;
-        int sum = 0;
-        foreach (int value in numbers)
-            sum += (int)Math.Pow(value, powValue);
+    // static int SquareSum(int[] numbers)
+    // {
+    //     int powValue = 2;
+    //     int sum = 0;
+    //     foreach (int value in numbers)
+    //         sum += (int)Math.Pow(value, powValue);
 
-        return sum;
-    }
+    //     return sum;
+    // }
+
+    // Solution raccourci
+    static int SquareSum(int[] numbers) => numbers.Sum((value) => (int)Math.Pow(value, 2)); 
 }
 
 
