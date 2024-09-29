@@ -1,5 +1,7 @@
 ﻿#pragma warning disable CS8321 // Local function is declared but never used
 
+using System.ComponentModel;
+
 Console.Clear();
 
 // Your classmates asked you to copy some paperwork for them. 
@@ -179,16 +181,6 @@ static void MinMax()
 /**********************************************************************************************/
 // Build a function that returns an array of integers from n to 1 where n>0.
 
-static string DisplayIntArray(int[] array)
-{
-    string[] resultArray = new string[array.Length];
-    int index = 0;
-    Array.ForEach(array, (value) =>
-    {
-        resultArray[index++] = value.ToString();
-    });
-    return $"[{string.Join(", ", resultArray)}]";
-}
 static void ReverseIntArray()
 {
 
@@ -238,6 +230,9 @@ static void ReverseIntArray()
 
 
 }
+
+
+/**********************************************************************************************/
 static void SquareSumSequence()
 {
 
@@ -270,7 +265,37 @@ static void SquareSumSequence()
     // }
 
     // Solution raccourci
-    static int SquareSum(int[] numbers) => numbers.Sum((value) => (int)Math.Pow(value, 2)); 
+    static int SquareSum(int[] numbers) => numbers.Sum((value) => (int)Math.Pow(value, 2));
+}
+
+/**********************************************************************************************/
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. 
+// Essentially, rearrange the digits to create the highest possible number.
+static void sortInteger()
+{
+
+    (int, int) test_1 = (42145, 54421);
+    (int, int) test_2 = (145263, 654321);
+    (int, int) test_3 = (123456789, 987654321);
+    var val1 = sortInt(test_1.Item1);
+    if (val1.Equals(test_1.Item2)) Console.WriteLine("test_1 success !");
+    else Console.WriteLine($"Result should be {test_1.Item2}, but you've return {val1}");
+
+    if (sortInt(test_2.Item1).Equals(test_2.Item2)) Console.WriteLine("test_2 success !");
+    else Console.WriteLine($"Result should be {test_2.Item2}, but you've return {sortInt(test_2.Item1)}");
+
+    if (sortInt(test_3.Item1).Equals(test_3.Item2)) Console.WriteLine("test_3 success !");
+    else Console.WriteLine($"Result should be {test_3.Item2}, but you've return {sortInt(test_3.Item1)}");
+
+
+    static int sortInt(int number)
+    {
+        var charList = number.ToString().ToArray();
+        Array.Sort(charList);
+        Array.Reverse(charList);
+        var numberToString = new string(charList);
+        return Convert.ToInt32(numberToString);
+    }
 }
 
 
@@ -282,5 +307,23 @@ static void SquareSumSequence()
 // RentalCar();
 // MinMax();
 // ReverseIntArray();
-SquareSumSequence();
+// SquareSumSequence();
+// sortInteger();
 
+
+
+
+static string DisplayIntArray(int[] array)
+{
+    string[] resultArray = new string[array.Length];
+    int index = 0;
+    Array.ForEach(array, (value) =>
+    {
+        resultArray[index++] = value.ToString();
+    });
+    return $"[{string.Join(", ", resultArray)}]";
+}
+
+static string DisplayStrArray(string[] array) => $"[{string.Join(", ", array)}]";
+
+static string DisplayCharArray(char[] array) => $"[{string.Join(", ", array)}]";
