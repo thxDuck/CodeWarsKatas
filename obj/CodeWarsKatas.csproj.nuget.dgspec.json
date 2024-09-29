@@ -1,25 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/home/thxduck/perso/CodeWarsKatas/CodeWarsKatas.csproj": {}
+    "D:\\Developpement\\c#\\CodeWarsKatas\\CodeWarsKatas.csproj": {}
   },
   "projects": {
-    "/home/thxduck/perso/CodeWarsKatas/CodeWarsKatas.csproj": {
+    "D:\\Developpement\\c#\\CodeWarsKatas\\CodeWarsKatas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/thxduck/perso/CodeWarsKatas/CodeWarsKatas.csproj",
+        "projectUniqueName": "D:\\Developpement\\c#\\CodeWarsKatas\\CodeWarsKatas.csproj",
         "projectName": "CodeWarsKatas",
-        "projectPath": "/home/thxduck/perso/CodeWarsKatas/CodeWarsKatas.csproj",
-        "packagesPath": "/home/thxduck/.nuget/packages/",
-        "outputPath": "/home/thxduck/perso/CodeWarsKatas/obj/",
+        "projectPath": "D:\\Developpement\\c#\\CodeWarsKatas\\CodeWarsKatas.csproj",
+        "packagesPath": "C:\\Users\\thxDu\\.nuget\\packages\\",
+        "outputPath": "D:\\Developpement\\c#\\CodeWarsKatas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/thxduck/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\thxDu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,6 +35,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -53,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

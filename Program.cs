@@ -1,5 +1,6 @@
-﻿Console.Clear();
+﻿#pragma warning disable CS8321 // Local function is declared but never used
 
+Console.Clear();
 
 // Your classmates asked you to copy some paperwork for them. 
 // You know that there are 'n' classmates and the paperwork has 'm' pages.
@@ -139,7 +140,7 @@ static void MinMax()
     (int[], int) test_3 = (new[] { 4, 6, 2, 1, 9, 63, -134, 566 }, 566);
     (int[], int) test_4 = (new[] { 5 }, 5);
 
-    
+
     if (Min(test_1.Item1).Equals(test_1.Item2)) Console.WriteLine("test_1 success !");
     else Console.WriteLine($"Result should be {test_1.Item2}, but you've return {Max(test_1.Item1)}");
 
@@ -175,6 +176,47 @@ static void MinMax()
 }
 
 
+/**********************************************************************************************/
+// Build a function that returns an array of integers from n to 1 where n>0.
+
+static string DisplayIntArray(int[] array)
+{
+    string[] resultArray = new string[array.Length];
+    int index = 0;
+    Array.ForEach(array, (value) =>
+    {
+        resultArray[index++] = value.ToString();
+    });
+    return $"[{string.Join(", ", resultArray)}]";
+}
+static void ReverseIntArray()
+{
+
+    (int, int[]) test_1 = (5, new[] { 5, 4, 3, 2, 1 });
+    (int, int[]) test_2 = (1, new[] { 1 });
+    (int, int[]) test_3 = (10, new[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 });
+
+    if (ReverseSeq(test_1.Item1).SequenceEqual(test_1.Item2)) Console.WriteLine("test_1 success !");
+    else Console.WriteLine($"Result should be {DisplayIntArray(test_1.Item2)}, but you've return {DisplayIntArray(ReverseSeq(test_1.Item1))}");
+
+    if (ReverseSeq(test_2.Item1).SequenceEqual(test_2.Item2)) Console.WriteLine("test_1 success !");
+    else Console.WriteLine($"Result should be {DisplayIntArray(test_2.Item2)}, but you've return {DisplayIntArray(ReverseSeq(test_2.Item1))}");
+
+    if (ReverseSeq(test_3.Item1).SequenceEqual(test_3.Item2)) Console.WriteLine("test_1 success !");
+    else Console.WriteLine($"Result should be {DisplayIntArray(test_3.Item2)}, but you've return {DisplayIntArray(ReverseSeq(test_3.Item1))}");
+
+
+    static int[] ReverseSeq(int n)
+    {
+        int index = 0;
+        int[] intArray = new int[n];
+        while (n > 0)
+            intArray[index++] = n--;
+        return intArray;
+    }
+}
+
+
 // Launch Katas : 
 // PaperworkKata();
 // Clock();
@@ -182,3 +224,4 @@ static void MinMax()
 // LostWithoutaMap();
 // RentalCar();
 // MinMax();
+ReverseIntArray();
