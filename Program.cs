@@ -277,9 +277,9 @@ static void sortInteger()
     (int, int) test_1 = (42145, 54421);
     (int, int) test_2 = (145263, 654321);
     (int, int) test_3 = (123456789, 987654321);
-    var val1 = sortInt(test_1.Item1);
-    if (val1.Equals(test_1.Item2)) Console.WriteLine("test_1 success !");
-    else Console.WriteLine($"Result should be {test_1.Item2}, but you've return {val1}");
+
+    if (sortInt(test_2.Item1).Equals(test_1.Item2)) Console.WriteLine("test_1 success !");
+    else Console.WriteLine($"Result should be {test_1.Item2}, but you've return {sortInt(test_2.Item1)}");
 
     if (sortInt(test_2.Item1).Equals(test_2.Item2)) Console.WriteLine("test_2 success !");
     else Console.WriteLine($"Result should be {test_2.Item2}, but you've return {sortInt(test_2.Item1)}");
@@ -299,6 +299,49 @@ static void sortInteger()
 }
 
 
+/******************************************************************************/
+// Make a program that filters a list of strings and returns a list with only your friends name in it.
+// If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours!
+// Otherwise, you can be sure he's not...
+
+static void FriendOfFoeKata()
+{
+
+
+    (string[], string[]) test_1 = (new[] { "Mark", "Jimmy", "Abel", "Amanda" }, new[] { "Mark", "Abel" });
+    (string[], string[]) test_2 = (new[] { "Peter", "Anna", "Michael" }, new[] { "Anna" });
+    (string[], string[]) test_3 = (new[] { "Linus", "Beau", "Azul" }, new[] { "Beau", "Azul" });
+
+    if (FriendOrFoe(test_1.Item1).SequenceEqual(test_1.Item2)) Console.WriteLine("test_1 success !");
+    else Console.WriteLine($"Result should be {DisplayStrArray(test_1.Item2)}, but you've return {DisplayStrArray(FriendOrFoe(test_2.Item1).ToArray())}");
+
+    if (FriendOrFoe(test_2.Item1).SequenceEqual(test_2.Item2)) Console.WriteLine("test_2 success !");
+    else Console.WriteLine($"Result should be {DisplayStrArray(test_2.Item2)}, but you've return {DisplayStrArray(FriendOrFoe(test_2.Item1).ToArray())}");
+
+    if (FriendOrFoe(test_3.Item1).SequenceEqual(test_3.Item2)) Console.WriteLine("test_3 success !");
+    else Console.WriteLine($"Result should be {DisplayStrArray(test_3.Item2)}, but you've return {DisplayStrArray(FriendOrFoe(test_3.Item1).ToArray())}");
+
+
+
+    static IEnumerable<string> FriendOrFoe(string[] names)
+    {
+        // Iterative method 
+        // var friends = new List<string>();
+        // foreach (string name in names)
+        //     if (name.Length == 4) friends.Add(name);
+        // return friends;
+
+
+        // Thanks to the Linq doc ! https://learn.microsoft.com/fr-fr/dotnet/csharp/linq/standard-query-operators/filtering-data
+        // With LINQ (Language-Integrated Query) Query syntaxe
+        // return from persons in names where persons.Length == 4 select persons;
+
+        // With LINQ Method syntax
+        return names.Where(name => name.Length == 4);
+    }
+}
+
+
 // Launch Katas : 
 // PaperworkKata();
 // Clock();
@@ -309,8 +352,7 @@ static void sortInteger()
 // ReverseIntArray();
 // SquareSumSequence();
 // sortInteger();
-
-
+FriendOfFoeKata();
 
 
 static string DisplayIntArray(int[] array)
