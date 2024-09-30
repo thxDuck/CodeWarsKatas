@@ -1,6 +1,7 @@
 ﻿#pragma warning disable CS8321 // Local function is declared but never used
 
 using System.ComponentModel;
+using System.Text.RegularExpressions;
 
 Console.Clear();
 
@@ -341,6 +342,48 @@ static void FriendOfFoeKata()
     }
 }
 
+/**********************************************************************************************/
+
+static void ATMPinCode()
+{
+
+    (string, bool) test_1 = ("1234", true);
+    (string, bool) test_2 = ("123456", true);
+    (string, bool) test_3 = ("123", false);
+    (string, bool) test_4 = ("12345", false);
+
+    if (isPinCodeValid(test_2.Item1).Equals(test_1.Item2)) Console.WriteLine("test_1 success !");
+    else Console.WriteLine($"Result should be {test_1.Item2}, but you've return {isPinCodeValid(test_2.Item1)}");
+
+    if (isPinCodeValid(test_2.Item1).Equals(test_2.Item2)) Console.WriteLine("test_2 success !");
+    else Console.WriteLine($"Result should be {test_2.Item2}, but you've return {isPinCodeValid(test_2.Item1)}");
+
+    if (isPinCodeValid(test_3.Item1).Equals(test_3.Item2)) Console.WriteLine("test_3 success !");
+    else Console.WriteLine($"Result should be {test_3.Item2}, but you've return {isPinCodeValid(test_3.Item1)}");
+
+    if (isPinCodeValid(test_4.Item1).Equals(test_4.Item2)) Console.WriteLine("test_4 success !");
+    else Console.WriteLine($"Result should be {test_4.Item2}, but you've return {isPinCodeValid(test_4.Item1)}");
+
+
+    static bool isPinCodeValid(string pin)
+    {
+        /*
+        God thanks : https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf
+        Patterns : 
+        - \s : White char
+        - () : capture group
+        - [0-9] : number from 0 to 9
+        - {0,3} : 0 to 3 occurence
+        */
+        string fourDigitPattern = @"\d{4}";
+        string sixDigitPattern = @"\d{6}";
+        if (pin.Length == 4) return Regex.IsMatch(pin, fourDigitPattern);
+        if (pin.Length == 6) return Regex.IsMatch(pin, sixDigitPattern);
+
+        return false;
+    }
+}
+
 
 // Launch Katas : 
 // PaperworkKata();
@@ -352,8 +395,8 @@ static void FriendOfFoeKata()
 // ReverseIntArray();
 // SquareSumSequence();
 // sortInteger();
-FriendOfFoeKata();
-
+// FriendOfFoeKata();
+ATMPinCode();
 
 static string DisplayIntArray(int[] array)
 {
